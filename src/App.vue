@@ -80,8 +80,8 @@ const strokeWidth = ref(8)
 
 // 顏色參數
 const color = ref('#4CAF50')
-const trackColor = ref('#ddd')
-const backgroundColor = ref('#fff')
+const trackColor = ref('#dddddd')
+const backgroundColor = ref('#ffffff')
 
 </script>
 
@@ -255,13 +255,6 @@ h1 {
         margin-bottom: 1rem;
     }
 
-    .knob-preview {
-        min-width: 100%;
-    }
-
-    .controls {
-        min-width: 100%;
-    }
 
     .control-item span {
         min-width: auto;
