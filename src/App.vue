@@ -89,7 +89,7 @@ const backgroundColor = ref('#fff')
 .app {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 h1 {
@@ -101,14 +101,16 @@ h1 {
 .knob-control-panel {
     display: flex;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1rem;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 .knob-preview {
-    flex: 0 0 300px;
+    flex: 1;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,7 +121,8 @@ h1 {
 }
 
 .controls {
-    flex: 1;
+    flex: 2;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -141,6 +144,7 @@ h1 {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .control-item label {
@@ -150,6 +154,7 @@ h1 {
 
 .control-item input[type="range"] {
     flex: 1;
+    min-width: 150px;
 }
 
 .control-item input[type="color"] {
@@ -203,5 +208,63 @@ h1 {
     color: #666;
     margin: 0;
     font-weight: bold;
+}
+
+/* 響應式設計 */
+@media screen and (max-width: 768px) {
+    .app {
+        padding: 0.5rem;
+    }
+
+    .knob-control-panel {
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .control-group {
+        padding: 1rem;
+    }
+
+    .control-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .control-item label {
+        min-width: auto;
+    }
+
+    .control-item input[type="range"] {
+        width: 100%;
+    }
+
+    .range-inputs {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .range-inputs input {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .knob-preview {
+        min-width: 100%;
+    }
+
+    .controls {
+        min-width: 100%;
+    }
+
+    .control-item span {
+        min-width: auto;
+    }
 }
 </style>
