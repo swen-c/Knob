@@ -17,7 +17,8 @@
             <g class="knob-center-content">
                 <circle :cx="size / 2" :cy="size / 2" :r="Math.max(radius - safeStrokeWidth / 2, 0)"
                     :fill="backgroundColor" />
-                <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="knob-value">
+                <text x="50%" y="50%" text-anchor="middle" :fill="valueColor" dominant-baseline="middle"
+                    class="knob-value">
                     {{ Math.round(value) }}
                 </text>
             </g>
@@ -48,6 +49,10 @@ const props = defineProps({
     color: {
         type: String,
         default: '#4CAF50'
+    },
+    valueColor: {
+        type: String,
+        default: '#222'
     },
     trackColor: {
         type: String,
@@ -215,7 +220,6 @@ watch(() => props.modelValue, (newValue) => {
 .knob-value {
     font-size: 1.2em;
     font-weight: bold;
-    fill: #222;
     pointer-events: none;
 }
 </style>

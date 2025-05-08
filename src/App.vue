@@ -5,7 +5,7 @@
             <div class="knob-preview">
                 <Knob :key="`knob-${size}-${strokeWidth}-${startAngle}`" v-model="knobValue" :min="min" :max="max"
                     :size="size" :color="color" :track-color="trackColor" :start-angle="startAngle"
-                    :background-color="backgroundColor" :stroke-width="strokeWidth" />
+                    :background-color="backgroundColor" :stroke-width="strokeWidth" :value-color="valueColor" />
                 <p class="current-value">當前值: {{ knobValue }}</p>
             </div>
 
@@ -59,6 +59,12 @@
                         <input type="color" v-model="backgroundColor" />
                         <span>{{ backgroundColor }}</span>
                     </div>
+
+                    <div class="control-item">
+                        <label>數值顏色</label>
+                        <input type="color" v-model="valueColor" />
+                        <span>{{ valueColor }}</span>
+                    </div>
                 </div>
 
             </div>
@@ -82,7 +88,7 @@ const strokeWidth = ref(8)
 const color = ref('#4CAF50')
 const trackColor = ref('#dddddd')
 const backgroundColor = ref('#ffffff')
-
+const valueColor = ref('#222222')
 </script>
 
 <style>
